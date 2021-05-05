@@ -11,7 +11,7 @@
     - Dans cette invite de commande , entrer le mot 'winver', vous obtiendrez ainsi la version de votre windows
     - Si votre windows est inférieur à la version 1903 (Build 18362). faite les mise à jour qu'il faut
 
-2) Prérequis pour continuer les installation
+2) Prérequis pour continuer les installations
 
     - un processeur 64 bit
     - minimun 4GB de RAM
