@@ -1,7 +1,7 @@
 
 ## Supprimer un container/image/service
 
-## Supprimer un service
+### Supprimer un service
 
     > docker-compose rm <nom_du_service_dans_docker-compose.yml>
 
