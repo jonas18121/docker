@@ -37,4 +37,10 @@
     - Télécharger l'exécutable de docker nommé `Docker Desktop for windows`
     - une fois télécharger, installez le et cochez les case qu'il faut
 
+8) Redémarrer votre ordinateur si Docker ne la pas fait lui même
+
+9) pour savoir si Docker est bien installer mettez la commande ci-dessous en ligne de commande ( PowerShell ou CMD )
+
+    > docker --version
+
 Bravo !!!
