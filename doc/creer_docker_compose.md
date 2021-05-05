@@ -23,3 +23,25 @@ Dans `docker-compose.yml`
 
 ### Conteneur MySQL
 
+Dans `docker-compose.yml`
+
+    version: "3.8"
+    services:
+        db:
+            image: mysql
+            container_name: wallky_mysql
+            restart: always
+            volumes:
+                - db-data:/var/lib/mysql
+            environment:
+                MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+            networks:
+                - dev
+
+ - db: = 
+ - image: =
+ - container_name: =
+ - restart: =  
+ - volumes: = 
+ - environment: = 
+ - networks: = 
