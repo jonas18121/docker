@@ -1,7 +1,8 @@
 # Installer Docker sous windows 10 Home
 
-Installer Docker sous windows 10 Home : https://docs.docker.com/docker-for-windows/install/
-Installation du sous système linux de windows : https://docs.microsoft.com/en-us/windows/wsl/install-win10
+- Installer Docker sous windows 10 Home : https://docs.docker.com/docker-for-windows/install/
+
+- Installation du sous système linux de windows : https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
 
 1) Vérifier que vous avez une version de windows supérieur à 1903 (Build 18362)
