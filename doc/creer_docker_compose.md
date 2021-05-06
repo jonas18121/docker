@@ -244,6 +244,51 @@ Si on fait la commande ci-dessous et qu'on ce rend a cette addresse `127.0.0.1:8
 
     > docker-compose up
 
+A ce stade  le fichier `docker-compose.yml` devrait être comme ça :
+
+    version: "3.8"
+
+    services:
+        db:
+            image: mysql
+            container_name: wallky_mysql
+            restart: always
+            volumes:
+                - db-data:/var/lib/mysql
+            environment:
+                MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+            networks:
+                - dev
+        phpmyadmin:
+            image: phpmyadmin
+            container_name: wallky_phpmyadmin
+            restart: always
+            depends_on:
+                - db
+            ports:
+                - 8080:80
+            environment:
+                PMA_HOST: db
+            networks:
+                - dev
+        www:
+            build: php
+            container_name: wallky_www
+            ports:
+                - "8741:80"
+            volumes:
+                - ./php/vhosts:/etc/apache2/sites-enabled
+                - ./:/var/www
+            user: '1000:1000' 
+            restart: always
+            networks:
+                - dev
+
+    networks:
+        dev:
+    volumes:
+        db-data:
+
 ## Céer un projet Symfony via Docker
 
     > docker exec <nom_du_container_qui_est_dans_service_www> composer create-project symfony/skeleton <my_project_name>
