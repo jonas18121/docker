@@ -53,7 +53,7 @@
 
 ### Redémarrer les conteneurs
 
-    > docker-compose start
+    > docker-compose restart
 
 ### Mettres les conteneurs en pause
 
