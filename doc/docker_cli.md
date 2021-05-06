@@ -54,7 +54,13 @@
 
 
 
-## Ligne de commande git bash
+## Executer une nouvelle cli dans le container
+
+### La commande docker exec exécute une nouvelle commande dans un conteneur en cours d'exécution.
+
+https://docs.docker.com/engine/reference/commandline/exec/
+
+    > docker exec
 
 ### Entrer dans la cli de git bash du projet
 
