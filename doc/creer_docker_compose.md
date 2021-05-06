@@ -168,6 +168,8 @@ Dans `php/Dockerfile`
 
 5) On rajoute dans le fichier `docker-compose.yml` un service qu'on appellera `www`
 
+dans `docker-compose.yml`
+
     www:
         build: php
         container_name: wallky_www
@@ -243,6 +245,51 @@ explication du chemin `/var/www/api/public`
 Si on fait la commande ci-dessous et qu'on ce rend a cette addresse `127.0.0.1:8741`, le serveur va bien fonctionné et va nous répondre qu'il n'a rien trouvé car on a pas créer de projet symfony pour l'instant
 
     > docker-compose up
+
+A ce stade  le fichier `docker-compose.yml` devrait être comme ça :
+
+    version: "3.8"
+
+    services:
+        db:
+            image: mysql
+            container_name: wallky_mysql
+            restart: always
+            volumes:
+                - db-data:/var/lib/mysql
+            environment:
+                MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+            networks:
+                - dev
+        phpmyadmin:
+            image: phpmyadmin
+            container_name: wallky_phpmyadmin
+            restart: always
+            depends_on:
+                - db
+            ports:
+                - 8080:80
+            environment:
+                PMA_HOST: db
+            networks:
+                - dev
+        www:
+            build: php
+            container_name: wallky_www
+            ports:
+                - "8741:80"
+            volumes:
+                - ./php/vhosts:/etc/apache2/sites-enabled
+                - ./:/var/www
+            user: '1000:1000' 
+            restart: always
+            networks:
+                - dev
+
+    networks:
+        dev:
+    volumes:
+        db-data:
 
 ## Céer un projet Symfony via Docker
 
