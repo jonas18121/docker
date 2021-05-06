@@ -168,6 +168,8 @@ Dans `php/Dockerfile`
 
 5) On rajoute dans le fichier `docker-compose.yml` un service qu'on appellera `www`
 
+dans `docker-compose.yml`
+
     www:
         build: php
         container_name: wallky_www
