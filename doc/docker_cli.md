@@ -15,15 +15,18 @@
 
 ## Voir la liste des container/images/service
 
-### Voir tous les images 
+### Voir la liste des images 
 
     > docker-compose images
 
+### Voir la liste des container 
+
+    > docker-compose ps
 
 
+## Extraire des images de service
 
-
-
+    > docker-compose pull
 
 
 ## Faire tourner ou stoper docker/docker-compose
@@ -48,8 +51,21 @@
 
     > docker-compose start
 
+### Redémarrer les conteneurs
 
+    > docker-compose start
 
+### Mettres les conteneurs en pause
+
+    > docker-compose pause
+
+### réactiver le conteneurs en pause
+
+    > docker-compose unpause
+
+### Forcer l'arrêt des conteneurs de service.
+
+    > docker-compose kill
 
 
 
