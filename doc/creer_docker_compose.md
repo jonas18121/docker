@@ -1,4 +1,4 @@
-# Création du fichier docker-compose.yml
+# Création du fichier docker-compose.yml et installation de Symfony
 
 Exemple de création du fichier docker-compose.yml
 
@@ -296,6 +296,8 @@ A ce stade  le fichier `docker-compose.yml` devrait être comme ça :
     > docker exec <nom_du_container_qui_est_dans_service_www> composer create-project symfony/skeleton <my_project_name>
 
     > docker exec wallky_www composer create-project symfony/skeleton api
+
+    > docker exec wallky_www composer create-project symfony/skeleton:"^4.4" api
 
 Pour les OS linux, il faudra rajouter la commande ci-dessous pour avoir tous les droit
 
