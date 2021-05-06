@@ -243,3 +243,25 @@ explication du chemin `/var/www/api/public`
 Si on fait la commande ci-dessous et qu'on ce rend a cette addresse `127.0.0.1:8741`, le serveur va bien fonctionné et va nous répondre qu'il n'a rien trouvé car on a pas créer de projet symfony pour l'instant
 
     > docker-compose up
+
+## Céer un projet Symfony via Docker
+
+    > docker exec <nom_du_container_qui_est_dans_service_www> composer create-project symfony/skeleton <my_project_name>
+
+    > docker exec wallky_www composer create-project symfony/skeleton api
+
+Pour les OS linux, il faudra rajouter la commande ci-dessous pour avoir tous les droit
+
+    > sudo chown -R $USER ./
+
+Maintenant on peut voir qu'a cette addresse `127.0.0.1:8741`, symfony est présent
+
+Entrer dans la cli de git bash du projet, 
+
+    > docker exec -it <nom_du_container_du_projet> bash
+
+    > docker exec -it wallky_www bash
+
+Puis cd `api`, afin de pouvoir executer des commandes symfony (php bin/console), pour travailler sur Symfony
+
+Bravo !!!
