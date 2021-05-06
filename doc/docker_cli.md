@@ -31,6 +31,10 @@
 
     > docker-compose up
 
+### Faire tourner docker-compose en arrière plan
+
+    > docker-compose up -d
+
 ### Arrêter les conteneurs et supprimer les conteneurs, les réseaux, les volumes et les images créés par up.
 
     > docker-compose down
